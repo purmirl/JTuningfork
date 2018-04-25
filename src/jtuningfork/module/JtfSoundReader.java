@@ -4,8 +4,8 @@
  * copyright PeTrA (c) 2018 All rights reserved.
  */
 
-package jtuningfork;
+package jtuningfork.module;
 
-public class JtfController {
+public class JtfSoundReader {
 
 }
