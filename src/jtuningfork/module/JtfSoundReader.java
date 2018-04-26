@@ -6,6 +6,27 @@
 
 package jtuningfork.module;
 
-public class JtfSoundReader {
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.TargetDataLine;
 
+/**
+ * jtf sound reader class
+ * @author PeTrA
+ * read sound module
+ */
+public class JtfSoundReader {
+	private AudioFormat audioFormat;
+	private TargetDataLine targetDataLine;
+	private DataLine.Info info;
+	
+	/**
+	 * Constructor
+	 * @param _audioFormat
+	 * @param _info
+	 */
+	public JtfSoundReader(AudioFormat _audioFormat, DataLine.Info _info) {
+		this.audioFormat = _audioFormat;
+		this.info = _info;
+	}
 }
