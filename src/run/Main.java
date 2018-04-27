@@ -15,6 +15,11 @@ package run;
  * floate sampleRate : 1 sec, sample count.
  * int sampleSizeInBits : sample's bit number.
  * int channels : audio channel's count.
+ * 
+ * example of AudioFormat
+ *  : AudioFormat audioFormat = new AudioFormat(8000, 8, 1, true, true);
+ * 
+ * 
  */
 public class Main {
 	public static void main(String[] args) {

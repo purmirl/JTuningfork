@@ -7,11 +7,13 @@
 package jtuningfork.module;
 
 import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
+import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
 
 /**
- * jtf sound reader class
+ * jtf sound reader class.
  * @author PeTrA
  * read sound module
  */
@@ -21,12 +23,23 @@ public class JtfSoundReader {
 	private DataLine.Info info;
 	
 	/**
-	 * Constructor
+	 * Constructor.
 	 * @param _audioFormat
 	 * @param _info
+	 * @throws LineUnavailableException 
 	 */
-	public JtfSoundReader(AudioFormat _audioFormat, DataLine.Info _info) {
+	public JtfSoundReader(AudioFormat _audioFormat, DataLine.Info _info) throws LineUnavailableException {
 		this.audioFormat = _audioFormat;
 		this.info = _info;
+		this.targetDataLine = (TargetDataLine)AudioSystem.getLine(this.info);
+	}
+	
+	/**
+	 * read the microphone sound function.
+	 * @throws LineUnavailableException
+	 */
+	public void read() throws LineUnavailableException {
+		this.targetDataLine.open(audioFormat);
+		this.targetDataLine.start();
 	}
 }
