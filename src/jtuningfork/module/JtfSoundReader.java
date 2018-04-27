@@ -22,6 +22,8 @@ public class JtfSoundReader {
 	private TargetDataLine targetDataLine;
 	private DataLine.Info info;
 	
+	private JtfSoundReaderServ jtfSoundReaderServ;
+	private Thread readerThread;
 	/**
 	 * Constructor.
 	 * @param _audioFormat
@@ -32,6 +34,8 @@ public class JtfSoundReader {
 		this.audioFormat = _audioFormat;
 		this.info = _info;
 		this.targetDataLine = (TargetDataLine)AudioSystem.getLine(this.info);
+		this.jtfSoundReaderServ = null;
+		this.readerThread = null;
 	}
 	
 	/**
@@ -41,5 +45,8 @@ public class JtfSoundReader {
 	public void read() throws LineUnavailableException {
 		this.targetDataLine.open(audioFormat);
 		this.targetDataLine.start();
+		this.jtfSoundReaderServ = new JtfSoundReaderServ(this.audioFormat, this.targetDataLine);
+		this.readerThread = new Thread(this.jtfSoundReaderServ);
+		this.readerThread.start();
 	}
 }

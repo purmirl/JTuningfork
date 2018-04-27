@@ -31,7 +31,7 @@ class JtfSoundReaderServ implements Runnable{
 	 * @param _line
 	 * @param _format
 	 */
-	protected JtfSoundReaderServ(TargetDataLine _line, AudioFormat _format) {
+	protected JtfSoundReaderServ(AudioFormat _format, TargetDataLine _line) {
 		this.line = _line;
 		this.format = _format;
 		this.bufferSize = (int)format.getSampleRate() * format.getFrameSize();
