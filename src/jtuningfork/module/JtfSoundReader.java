@@ -44,9 +44,13 @@ public class JtfSoundReader {
 	 */
 	public void read() throws LineUnavailableException {
 		this.targetDataLine.open(audioFormat);
-		this.targetDataLine.start();
+//		this.targetDataLine.start();
 		this.jtfSoundReaderServ = new JtfSoundReaderServ(this.audioFormat, this.targetDataLine);
 		this.readerThread = new Thread(this.jtfSoundReaderServ);
 		this.readerThread.start();
+	}
+	
+	public byte[] getSound() {
+		return jtfSoundReaderServ.getBuffer();
 	}
 }
