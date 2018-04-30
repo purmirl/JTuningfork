@@ -42,9 +42,7 @@ public class JtfSoundReader {
 	 * read the microphone sound function.
 	 * @throws LineUnavailableException
 	 */
-	public void read() throws LineUnavailableException {
-		this.targetDataLine.open(audioFormat);
-//		this.targetDataLine.start();
+	public void read() {
 		this.jtfSoundReaderServ = new JtfSoundReaderServ(this.audioFormat, this.targetDataLine);
 		this.readerThread = new Thread(this.jtfSoundReaderServ);
 		this.readerThread.start();

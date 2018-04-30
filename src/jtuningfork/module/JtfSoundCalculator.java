@@ -7,5 +7,5 @@
 package jtuningfork.module;
 
 public class JtfSoundCalculator {
-
+	
 }

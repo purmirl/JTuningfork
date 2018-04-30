@@ -6,6 +6,25 @@
 
 package jtuningfork.module;
 
+/**
+ * Main controller.
+ * @author PeTrA
+ */
 public class JtfController {
-
+	/* Jtf Class Object
+	*/	private JtfSoundReader jtfSoundReader;
+		private JtfSoundCalculator jtfSoundCalculator;
+	
+	public JtfController(JtfSoundReader _jtfSoundReader, JtfSoundCalculator _jtfSoundCalculator) {
+		this.jtfSoundReader = _jtfSoundReader;
+		this.jtfSoundCalculator = _jtfSoundCalculator;
+	}
+	
+	public void programStart() {
+		algorithm();
+	}
+	
+	private void algorithm() {
+		
+	}
 }

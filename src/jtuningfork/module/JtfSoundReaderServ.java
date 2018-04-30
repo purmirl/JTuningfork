@@ -10,6 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
 
 /**
@@ -47,6 +48,12 @@ class JtfSoundReaderServ implements Runnable{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
+		try {
+			this.line.open(this.format);
+		} catch (LineUnavailableException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.buffer = new byte[this.line.getBufferSize() / 5];
 		this.stopKey = 1;
 		this.line.start();
