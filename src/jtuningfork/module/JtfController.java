@@ -21,10 +21,10 @@ public class JtfController {
 	}
 	
 	public void programStart() {
-		algorithm();
+		_programStart();
 	}
 	
-	private void algorithm() {
+	private void _programStart() {
 		
 	}
 }
