@@ -35,6 +35,11 @@ import javax.sound.sampled.TargetDataLine;
  * -Tempo
  * -Spatial Location
  * -Reverberation
+ * 
+ * ----------------
+ * Reference
+ * 
+ * -https://stackoverflow.com/questions/8699360/audio-analysis-frequency-vs-pitch
  */
 
 import jtuningfork.module.*;
