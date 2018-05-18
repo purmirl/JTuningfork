@@ -51,4 +51,8 @@ public class JtfSoundReader {
 	public byte[] getSound() {
 		return jtfSoundReaderServ.getBuffer();
 	}
+	
+	protected JtfSoundReaderServ getJtfSoundReaderServ() {
+		return this.jtfSoundReaderServ;
+	}
 }

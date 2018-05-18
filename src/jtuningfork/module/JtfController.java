@@ -27,4 +27,8 @@ public class JtfController {
 	private void _programStart() {
 		
 	}
+	
+	protected JtfSoundReader getJtfSoundReader() {
+		return this.jtfSoundReader;
+	}
 }
