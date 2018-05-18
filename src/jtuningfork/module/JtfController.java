@@ -10,7 +10,7 @@ package jtuningfork.module;
  * Main controller.
  * @author PeTrA
  */
-public class JtfController {
+public class JtfController implements Runnable{
 	/* Jtf Class Object
 	*/	private JtfSoundReader jtfSoundReader;
 		private JtfSoundCalculator jtfSoundCalculator;
@@ -23,11 +23,7 @@ public class JtfController {
 		this.jtfSoundCalculator = _jtfSoundCalculator;
 	}
 	
-	public void programStart() {
-		_programStart();
-	}
-	
-	private void _programStart() {
+	private void programStart() {
 		
 	}
 	
@@ -37,5 +33,9 @@ public class JtfController {
 	
 	private void uploadSound() {
 		this.buffer = this.jtfSoundReader.getJtfSoundReaderServ().getBuffer();
+	}
+	
+	public void run() {
+		programStart();
 	}
 }
