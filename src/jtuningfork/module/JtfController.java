@@ -15,6 +15,9 @@ public class JtfController {
 	*/	private JtfSoundReader jtfSoundReader;
 		private JtfSoundCalculator jtfSoundCalculator;
 	
+	/* Sound buffer byte[] 
+	*/	private byte[] buffer;
+	
 	public JtfController(JtfSoundReader _jtfSoundReader, JtfSoundCalculator _jtfSoundCalculator) {
 		this.jtfSoundReader = _jtfSoundReader;
 		this.jtfSoundCalculator = _jtfSoundCalculator;
@@ -30,5 +33,9 @@ public class JtfController {
 	
 	protected JtfSoundReader getJtfSoundReader() {
 		return this.jtfSoundReader;
+	}
+	
+	private void uploadSound() {
+		this.buffer = this.jtfSoundReader.getJtfSoundReaderServ().getBuffer();
 	}
 }

@@ -15,12 +15,8 @@ import java.nio.ByteOrder;
  * @author PeTrA
  */
 public class JtfSoundCalculator {
-	/* Sound buffer byte[] 
-	*/	private byte[] buffer;
 	
-	public JtfSoundCalculator() {
-		this.buffer = null;
-	}
+	public JtfSoundCalculator() {}
 	
 	public void Calculator(byte[] buffer) {
 		algorithm(buffer);
@@ -30,9 +26,7 @@ public class JtfSoundCalculator {
 		
 	}
 	
-	private void uploadSound() {
-		
-	}
+	
 	
 	/**
 	 * trans the byte data to double data
